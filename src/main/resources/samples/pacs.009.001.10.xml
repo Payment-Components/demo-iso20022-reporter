@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.009.001.10">
+    <FICdtTrf>
+        <GrpHdr>
+            <MsgId>BBBB/150928-FICT/JPY/430</MsgId>
+            <CreDtTm>2015-09-28T16:00:00</CreDtTm>
+            <NbOfTxs>1</NbOfTxs>
+            <SttlmInf>
+                <SttlmMtd>INDA</SttlmMtd>
+            </SttlmInf>
+            <InstgAgt>
+                <FinInstnId>
+                    <BICFI>BBBBUS33</BICFI>
+                </FinInstnId>
+            </InstgAgt>
+            <InstdAgt>
+                <FinInstnId>
+                    <BICFI>CCCCJPJT</BICFI>
+                </FinInstnId>
+            </InstdAgt>
+        </GrpHdr>
+        <CdtTrfTxInf>
+            <PmtId>
+                <InstrId>BBBB/150928-FICT/JPY/430/1</InstrId>
+                <EndToEndId>ABC/4562/2015-09-08</EndToEndId>
+                <TxId>BBBB/150928-CCT/123/1</TxId>
+            </PmtId>
+            <IntrBkSttlmAmt Ccy="JPY">10000000</IntrBkSttlmAmt>
+            <IntrBkSttlmDt>2015-09-29</IntrBkSttlmDt>
+            <Dbtr>
+                <FinInstnId>
+                    <BICFI>BBBBUS33</BICFI>
+                    <Nm>Bank A</Nm>
+                    <PstlAdr>
+                        <AdrLine>Address 1</AdrLine>
+                    </PstlAdr>
+                </FinInstnId>
+            </Dbtr>
+            <DbtrAcct>
+                <Id>
+                    <IBAN>DE89370400440332014000</IBAN>
+                </Id>
+            </DbtrAcct>
+            <CdtrAgt>
+                <FinInstnId>
+                    <BICFI>AAAAJPJT</BICFI>
+                </FinInstnId>
+            </CdtrAgt>
+            <Cdtr>
+                <FinInstnId>
+                    <BICFI>AAAAGB2L</BICFI>
+                    <Nm>Bank B</Nm>
+                    <PstlAdr>
+                        <AdrLine>Address 2</AdrLine>
+                    </PstlAdr>
+                </FinInstnId>
+            </Cdtr>
+            <CdtrAcct>
+                <Id>
+                    <IBAN>GB89370400440332014000</IBAN>
+                </Id>
+            </CdtrAcct>
+            <UndrlygCstmrCdtTrf>
+                <InitgPty>
+                    <Nm>ABC Corporation</Nm>
+                    <PstlAdr>
+                        <StrtNm>Times Square</StrtNm>
+                        <BldgNb>7</BldgNb>
+                        <PstCd>NY 10036</PstCd>
+                        <TwnNm>New York</TwnNm>
+                        <Ctry>US</Ctry>
+                    </PstlAdr>
+                </InitgPty>
+                <Dbtr>
+                    <Nm>ABC Corporation</Nm>
+                    <PstlAdr>
+                        <StrtNm>Times Square</StrtNm>
+                        <BldgNb>7</BldgNb>
+                        <PstCd>NY 10036</PstCd>
+                        <TwnNm>New York</TwnNm>
+                        <Ctry>US</Ctry>
+                    </PstlAdr>
+                </Dbtr>
+                <DbtrAgt>
+                    <FinInstnId>
+                        <BICFI>BBBBUS33</BICFI>
+                    </FinInstnId>
+                </DbtrAgt>
+                <CdtrAgt>
+                    <FinInstnId>
+                        <BICFI>AAAAGB2L</BICFI>
+                    </FinInstnId>
+                </CdtrAgt>
+                <Cdtr>
+                    <Nm>DEF Electronics</Nm>
+                    <PstlAdr>
+                        <StrtNm>Mark Lane</StrtNm>
+                        <BldgNb>55</BldgNb>
+                        <PstCd>EC3RZNE</PstCd>
+                        <TwnNm>London</TwnNm>
+                        <Ctry>GB</Ctry>
+                        <AdrLine>Corn Exchange 5th Floor</AdrLine>
+                    </PstlAdr>
+                </Cdtr>
+                <CdtrAcct>
+                    <Id>
+                        <Othr>
+                            <Id>29683707994815</Id>
+                        </Othr>
+                    </Id>
+                </CdtrAcct>
+                <RmtInf>
+                    <Strd>
+                        <RfrdDocInf>
+                            <Tp>
+                                <CdOrPrtry>
+                                    <Cd>CINV</Cd>
+                                </CdOrPrtry>
+                            </Tp>
+                            <Nb>4562</Nb>
+                            <RltdDt>2015-09-08</RltdDt>
+                        </RfrdDocInf>
+                    </Strd>
+                </RmtInf>
+            </UndrlygCstmrCdtTrf>
+        </CdtTrfTxInf>
+    </FICdtTrf>
+</Document>

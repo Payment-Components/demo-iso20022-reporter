@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.004.001.11">
+    <PmtRtr>
+        <GrpHdr>
+            <MsgId>CCCC/151122-PR007</MsgId>
+            <CreDtTm>2015-11-22T10:37:00</CreDtTm>
+            <NbOfTxs>1</NbOfTxs>
+            <SttlmInf>
+                <SttlmMtd>CLRG</SttlmMtd>
+                <ClrSys>
+                    <Prtry>CBJ</Prtry>
+                </ClrSys>
+            </SttlmInf>
+            <InstgAgt>
+                <FinInstnId>
+                    <BICFI>CCCCIE2D</BICFI>
+                </FinInstnId>
+            </InstgAgt>
+            <InstdAgt>
+                <FinInstnId>
+                    <BICFI>BBBBIE2D</BICFI>
+                </FinInstnId>
+            </InstdAgt>
+        </GrpHdr>
+        <OrgnlGrpInf>
+            <OrgnlMsgId>BBBB/151109-CBJ056</OrgnlMsgId>
+            <OrgnlMsgNmId>pacs.008.001.10</OrgnlMsgNmId>
+            <OrgnlCreDtTm>2015-11-09T10:13:00</OrgnlCreDtTm>
+        </OrgnlGrpInf>
+        <TxInf>
+            <RtrId>CCCC/151122-PR007</RtrId>
+            <OrgnlInstrId>BBBB/151109-CBJ056/1</OrgnlInstrId>
+            <OrgnlEndToEndId>CROPS/SX-25T/2015-10-13</OrgnlEndToEndId>
+            <OrgnlTxId>AAAA/151109-CCT/EUR443/1</OrgnlTxId>
+            <OrgnlIntrBkSttlmAmt Ccy="EUR">74900</OrgnlIntrBkSttlmAmt>
+            <RtrdIntrBkSttlmAmt Ccy="EUR">74750</RtrdIntrBkSttlmAmt>
+            <IntrBkSttlmDt>2015-11-22</IntrBkSttlmDt>
+            <RtrdInstdAmt Ccy="EUR">74850</RtrdInstdAmt>
+            <ChrgBr>CRED</ChrgBr>
+            <ChrgsInf>
+                <Amt Ccy="EUR">100</Amt>
+                <Agt>
+                    <FinInstnId>
+                        <BICFI>CCCCIE2D</BICFI>
+                    </FinInstnId>
+                </Agt>
+            </ChrgsInf>
+            <RtrRsnInf>
+                <Orgtr>
+                    <Nm>Seed Inc.</Nm>
+                </Orgtr>
+                <Rsn>
+                    <Cd>NARR</Cd>
+                </Rsn>
+                <AddtlInf>RETURN AFTER ACCEPTED PAYMENT CANCELLATION REQUEST</AddtlInf>
+            </RtrRsnInf>
+            <OrgnlTxRef>
+                <Dbtr>
+                    <Pty>
+                        <Nm>Debtor Name</Nm>
+                        <PstlAdr>
+                            <AdrLine>Address 1</AdrLine>
+                        </PstlAdr>
+                    </Pty>
+                </Dbtr>
+                <DbtrAcct>
+                    <Id>
+                        <IBAN>DE89370400440332014000</IBAN>
+                    </Id>
+                </DbtrAcct>
+                <DbtrAgt>
+                    <FinInstnId>
+                        <BICFI>TESTBICA</BICFI>
+                    </FinInstnId>
+                </DbtrAgt>
+                <CdtrAgt>
+                    <FinInstnId>
+                        <BICFI>TESTBICB</BICFI>
+                    </FinInstnId>
+                </CdtrAgt>
+                <Cdtr>
+                    <Pty>
+                        <Nm>Creditor Name</Nm>
+                        <PstlAdr>
+                            <AdrLine>Address 2</AdrLine>
+                        </PstlAdr>
+                    </Pty>
+                </Cdtr>
+                <CdtrAcct>
+                    <Id>
+                        <IBAN>DE89370400440332014001</IBAN>
+                    </Id>
+                </CdtrAcct>
+            </OrgnlTxRef>
+        </TxInf>
+    </PmtRtr>
+</Document>
