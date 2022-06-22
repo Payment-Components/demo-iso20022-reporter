@@ -39,7 +39,7 @@ dependencies {
     // or this version - just one `fat` dependency
 //    implementation name: 'swift-mx-reporter-1.1-standalone'
 
-    implementation "gr.datamation.mx:mx:21.16.1:full"
+    implementation "gr.datamation.mx:mx:21.19.0:full"
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
