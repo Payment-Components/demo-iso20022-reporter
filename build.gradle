@@ -18,10 +18,10 @@ repositories {
         /*
          * The following properties should be defined in the ~/.gradle/gradle.properties
          * datamationRepoUrl=https://nexus.paymentcomponents.com/repository
-         * datamationRepoUsername=internaluser
-         * datamationRepoPassword=<internaluser password for the repo>
+         * datamationRepoUsername=CLIENT_USERNAME
+         * datamationRepoPassword=<client password for the repo>
           */
-        url "$datamationRepoUrl/internal"
+        url "$datamationRepoUrl/mx_reporter"
         credentials {
             username = datamationRepoUsername
             password = datamationRepoPassword
@@ -34,12 +34,12 @@ dependencies {
 
     // either this version - a few dependencies that will be retrieved from build.gradle of the reporter in case of maven repository
     // and the `min` version of the reporter
-    implementation "gr.datamation.mx.report:swift-mx-reporter:1.1:min"
+    implementation "gr.datamation.mx.report:swift-mx-reporter:1.2.0:min"
 
     // or this version - just one `fat` dependency
-//    implementation name: 'swift-mx-reporter-1.1-standalone'
+//    implementation name: 'swift-mx-reporter-1.2.0-standalone'
 
-    implementation "gr.datamation.mx:mx:21.19.0:full"
+    implementation "gr.datamation.mx:mx:21.20.1:mx-reporter"
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'

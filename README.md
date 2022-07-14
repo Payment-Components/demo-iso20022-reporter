@@ -13,7 +13,7 @@ Define repository in the repositories section
 ```xml
 <repository>
     <id>paymentcomponents</id>
-    <url>https://nexus.paymentcomponents.com/repository/{CLIENT_REPO}</url>
+    <url>https://nexus.paymentcomponents.com/repository/mx_reporter</url>
 </repository>
 ```
 Import the SDK
@@ -21,7 +21,7 @@ Import the SDK
 <dependency>
     <groupId>gr.datamation.mx.report</groupId>
     <artifactId>swift-mx-reporter</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.2.0</version>
     <classifier>min</classifier>
     <!-- OR   -->
     <classifier>standalone</classifier>
@@ -33,15 +33,15 @@ Define repository in the repositories section
 ```groovy
 repositories {
     maven {
-        url "https://nexus.paymentcomponents.com/repository/{CLIENT_REPO}"
+        url "https://nexus.paymentcomponents.com/repository/mx_reporter"
     }
 }
 ```
 Import the SDK
 ```groovy
-implementation 'gr.datamation.mx.report:swift-mx-reporter:1.0-SNAPSHOT:min'
+implementation 'gr.datamation.mx.report:swift-mx-reporter:1.2.0:min'
 //OR
-implementation 'gr.datamation.mx.report:swift-mx-reporter:1.0-SNAPSHOT:standalone'
+implementation 'gr.datamation.mx.report:swift-mx-reporter:1.2.0-SNAPSHOT:standalone'
 ```
 In case you purchase the SDK you will be given a protected Maven repository with a username and a password. You can configure your project to download the SDK from there.
 
@@ -52,13 +52,13 @@ In order for the reporter to work, you also need to include the swift mx depende
 <dependency>
     <groupId>gr.datamation.mx</groupId>
     <artifactId>mx</artifactId>
-    <version>21.16.1</version>
-    <classifier>{CLIENT_REPO}</classifier>
+    <version>21.20.1</version>
+    <classifier>mx-reporter</classifier>
 </dependency>
 ```
 ##### Gradle
 ```groovy
-    implementation "gr.datamation.mx:mx:21.16.1:{CLIENT_REPO}"
+    implementation "gr.datamation.mx:mx:21.20.1:{CLIENT_REPO}"
 ```
 
 #### Other dependencies
@@ -121,6 +121,14 @@ Then, you can call `buildReport` by passing the message Object or message Path.
     //build message
     instance.buildReport(
         camt053.getMessage(),
+        Paths.get("./camt.053.001.09.pdf"),
+        new InternalData("Internal ID", "Internal Status")
+    );
+
+    //OR
+    String messageXml = "to be completed...";
+    instance.buildReport(
+        messageXml,
         Paths.get("./camt.053.001.09.pdf"),
         new InternalData("Internal ID", "Internal Status")
     );
