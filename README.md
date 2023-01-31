@@ -1,3 +1,7 @@
+<a id="logo" href="https://www.paymentcomponents.com" title="Payment Components" target="_blank">
+    <img loading="lazy" src="https://i.postimg.cc/yN5TNy29/LOGO-HORIZONTAL2.png" alt="Payment Components">
+</a>
+
 # ISO20022 Reporter Demo
 
 With this project, you can create beautiful pdf reports for ISO20022 messages.
