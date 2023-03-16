@@ -25,7 +25,7 @@ Import the SDK
 <dependency>
     <groupId>gr.datamation.mx.report</groupId>
     <artifactId>swift-mx-reporter</artifactId>
-    <version>1.2.1</version>
+    <version>1.3.0</version>
     <classifier>min</classifier>
     <!-- OR   -->
     <classifier>standalone</classifier>
@@ -43,9 +43,9 @@ repositories {
 ```
 Import the SDK
 ```groovy
-implementation 'gr.datamation.mx.report:swift-mx-reporter:1.2.1:min'
+implementation 'gr.datamation.mx.report:swift-mx-reporter:1.3.0:min'
 //OR
-implementation 'gr.datamation.mx.report:swift-mx-reporter:1.2.1-SNAPSHOT:standalone'
+implementation 'gr.datamation.mx.report:swift-mx-reporter:1.3.0-SNAPSHOT:standalone'
 ```
 In case you purchase the SDK you will be given a protected Maven repository with a username and a password. You can configure your project to download the SDK from there.
 
@@ -56,13 +56,13 @@ In order for the reporter to work, you also need to include the swift mx depende
 <dependency>
     <groupId>gr.datamation.mx</groupId>
     <artifactId>mx</artifactId>
-    <version>22.0.0</version>
+    <version>22.6.0</version>
     <classifier>mx-reporter</classifier>
 </dependency>
 ```
 ##### Gradle
 ```groovy
-    implementation "gr.datamation.mx:mx:22.0.0:{CLIENT_REPO}"
+    implementation "gr.datamation.mx:mx:22.6.0:{CLIENT_REPO}"
 ```
 
 #### Other dependencies
@@ -117,7 +117,8 @@ Then, you can call `buildReport` by passing the message Object or message Path.
     instance.buildReport(
             Paths.get("./src/main/resources/samples/camt.053.001.09.xml"),
             Paths.get("./camt.053.001.09.pdf"),
-            new InternalData("Internal ID", "Internal Status")
+            new InternalData("Internal ID", "Internal Status"),
+            Collections.emptyMap()
     );
     
     //OR
@@ -126,7 +127,8 @@ Then, you can call `buildReport` by passing the message Object or message Path.
     instance.buildReport(
         camt053.getMessage(),
         Paths.get("./camt.053.001.09.pdf"),
-        new InternalData("Internal ID", "Internal Status")
+        new InternalData("Internal ID", "Internal Status"),
+        Collections.emptyMap()
     );
 
     //OR
@@ -134,9 +136,25 @@ Then, you can call `buildReport` by passing the message Object or message Path.
     instance.buildReport(
         messageXml,
         Paths.get("./camt.053.001.09.pdf"),
-        new InternalData("Internal ID", "Internal Status")
+        new InternalData("Internal ID", "Internal Status"),
+        Collections.emptyMap()
     );
 
+```
+
+### External information
+You have the option to provide external information to the report. All you have to do is to pass a `Map` in `buildReport()` with the data you want to show.  
+It is recommended to use a `LinkedHashMap` in order to preserve the order of the data.  
+```java
+    instance.buildReport(
+        messageXml,
+        Paths.get("./camt.053.001.09.pdf"),
+        new InternalData("Internal ID", "Internal Status"),
+        new LinkedHashMap<String, String>() {{
+            put("Sender", "Bank A");
+            put("Receiver", "Bank B");
+        }}
+    );
 ```
 
 ## Supported Messages

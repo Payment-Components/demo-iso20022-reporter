@@ -9,6 +9,7 @@ import javax.xml.stream.XMLStreamException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Collections;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -33,7 +34,8 @@ public class MxReporterDemo {
         instance.buildReport(
                 Paths.get("./src/main/resources/samples/camt.053.001.09.xml"),
                 Paths.get("./camt.053.001.09.pdf"),
-                new InternalData("Internal ID", "Internal Status")
+                new InternalData("Internal ID", "Internal Status"),
+                Collections.emptyMap()
         );
     }
 
@@ -43,7 +45,8 @@ public class MxReporterDemo {
         instance.buildReport(
                 Paths.get("./src/main/resources/samples/camt.054.001.09.xml"),
                 Paths.get("./camt.054.001.09.pdf"),
-                new InternalData("Internal ID", "Internal Status")
+                new InternalData("Internal ID", "Internal Status"),
+                Collections.emptyMap()
         );
     }
 
@@ -53,7 +56,8 @@ public class MxReporterDemo {
         instance.buildReport(
                 Paths.get("./src/main/resources/samples/pacs.004.001.11.xml"),
                 Paths.get("./pacs.004.001.11.pdf"),
-                new InternalData("Internal ID", "Internal Status")
+                new InternalData("Internal ID", "Internal Status"),
+                Collections.emptyMap()
         );
     }
 
@@ -63,7 +67,8 @@ public class MxReporterDemo {
         instance.buildReport(
                 Paths.get("./src/main/resources/samples/pacs.008.001.10.xml"),
                 Paths.get("./pacs.008.001.10.pdf"),
-                new InternalData("Internal ID", "Internal Status")
+                new InternalData("Internal ID", "Internal Status"),
+                Collections.emptyMap()
         );
     }
 
@@ -73,7 +78,8 @@ public class MxReporterDemo {
         instance.buildReport(
                 Paths.get("./src/main/resources/samples/pacs.009.001.10.xml"),
                 Paths.get("./pacs.009.001.10.pdf"),
-                new InternalData("Internal ID", "Internal Status")
+                new InternalData("Internal ID", "Internal Status"),
+                Collections.emptyMap()
         );
     }
 
@@ -89,7 +95,8 @@ public class MxReporterDemo {
             instance.buildReport(
                     messageText,
                     Paths.get("./camt.053.001.09_from_text.pdf"),
-                    new InternalData("Internal ID", "Internal Status")
+                    new InternalData("Internal ID", "Internal Status"),
+                    Collections.emptyMap()
             );
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -111,7 +118,8 @@ public class MxReporterDemo {
             instance.buildReport(
                     camt053,
                     Paths.get("./camt.053.001.09_from_object.pdf"),
-                    new InternalData("Internal ID", "Internal Status")
+                    new InternalData("Internal ID", "Internal Status"),
+                    Collections.emptyMap()
             );
         } catch (JAXBException | XMLStreamException | IOException e) {
             throw new RuntimeException(e);
