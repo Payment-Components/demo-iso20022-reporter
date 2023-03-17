@@ -25,7 +25,7 @@ Import the SDK
 <dependency>
     <groupId>gr.datamation.mx.report</groupId>
     <artifactId>swift-mx-reporter</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
     <classifier>min</classifier>
     <!-- OR   -->
     <classifier>standalone</classifier>
@@ -43,9 +43,9 @@ repositories {
 ```
 Import the SDK
 ```groovy
-implementation 'gr.datamation.mx.report:swift-mx-reporter:1.3.0:min'
+implementation 'gr.datamation.mx.report:swift-mx-reporter:1.3.1:min'
 //OR
-implementation 'gr.datamation.mx.report:swift-mx-reporter:1.3.0-SNAPSHOT:standalone'
+implementation 'gr.datamation.mx.report:swift-mx-reporter:1.3.1-SNAPSHOT:standalone'
 ```
 In case you purchase the SDK you will be given a protected Maven repository with a username and a password. You can configure your project to download the SDK from there.
 

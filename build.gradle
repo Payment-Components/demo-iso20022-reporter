@@ -34,10 +34,10 @@ dependencies {
 
     // either this version - a few dependencies that will be retrieved from build.gradle of the reporter in case of maven repository
     // and the `min` version of the reporter
-    implementation "gr.datamation.mx.report:swift-mx-reporter:1.3.0:min"
+    implementation "gr.datamation.mx.report:swift-mx-reporter:1.3.1:min"
 
     // or this version - just one `fat` dependency
-//    implementation name: 'swift-mx-reporter-1.3.0-standalone'
+//    implementation name: 'swift-mx-reporter-1.3.1-standalone'
 
     implementation "gr.datamation.mx:mx:22.6.0:mx-reporter"
 
