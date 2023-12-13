@@ -19,6 +19,11 @@ Define repository in the repositories section
     <id>paymentcomponents</id>
     <url>https://nexus.paymentcomponents.com/repository/mx_reporter</url>
 </repository>
+<!--We need this for com.github.celtric:kotlin-html-->
+<repository>
+    <id>github-repos</id>
+    <url>https://jitpack.io</url>
+</repository>
 ```
 Import the SDK
 ```xml
@@ -110,7 +115,7 @@ implementation "com.github.celtric:kotlin-html:0.1.4"
 This project uses the `itext` library in order to create pdf reports.  
 In order to create a report, you need to instantiate the `Reporter` class by passing the Path to the html resources.  
 You can find an example of css styling [here](./src/main/resources/html-resources/css/style.css). Note that you can declare the path for the bank logo inside `.header-container`.    
-Then, you can call `buildReport` by passing the message Object or message Path.
+Then, you can call `buildReport` by passing the message Object (should implement `gr.datamation.mx.Message`) or message Path.
 ```java
    Reporter instance = new Reporter(Paths.get("./src/main/resources/html-resources"));
 
@@ -141,6 +146,25 @@ Then, you can call `buildReport` by passing the message Object or message Path.
     );
 
 ```
+
+### CBPR+ Example
+CBPR+ messages are represented by `CbprMessage` class in [`ISO20022 SDK`](https://github.com/Payment-Components/demo-iso20022?tab=readme-ov-file#cbpr-messages). This class consinsts of 2 
+`CoreMessage` instances that implement `gr.datamation.mx.Message`. You can use the `Document` of the `CbprMessage` and pass it to the reporter.
+```java
+   Reporter instance = new Reporter(Paths.get("./src/main/resources/html-resources"));
+
+    CbprMessage<BusinessApplicationHeader02, FIToFICustomerCreditTransfer08> cbprMessage = new CbprMessage<>(new BusinessApplicationHeader02(), new FIToFICustomerCreditTransfer08());
+    //Fill the cbprMessage with data from xml validate CBPR+ against the xml schema.
+    ValidationErrorList validationErrorList = cbprMessage.autoParseAndValidateXml(new ByteArrayInputStream(validCbprPacs008String.getBytes()));
+    
+    instance.buildReport(
+            cbprMessage.getDocument(),
+            Paths.get("./pacs.008.cbpr.pdf"),
+            new InternalData("Internal ID", "Internal Status"),
+            Collections.emptyMap()
+    );
+```
+
 
 ### External information
 You have the option to provide external information to the report. All you have to do is to pass a `Map` in `buildReport()` with the data you want to show.  
